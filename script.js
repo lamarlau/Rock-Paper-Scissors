@@ -1,6 +1,6 @@
 console.log("Hello World!")
 //can be completely run inside the console
-var selection = ["Rock, Paper, Scissors"]//for computer selection
+var selection = ["Rock", "Paper", "Scissors"];
 const randIndex = Math.floor(Math.random() * selection.length);
 
 //computer play is to randomly choose rock paper or scissors
@@ -22,5 +22,5 @@ function game() {
 
 }
 
-console.log()//display the results of the round and winner to the user
-prompt()//to get input from user
+//console.log()display the results of the round and winner to the user
+//prompt()to get input from user
