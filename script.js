@@ -19,12 +19,30 @@ playerselection = choice;
 computerselection = computerPlay;
 if (computerselection = playerselection) {
     roundResults = tie;
-    tie = "Tie, you both chose ${choice}"
+    tie = console.log("Tie, you both chose ${choice}");
     return roundResults;
+}
+
+if (playerselection = selection[0] && computerselection = selection[1]) {
+    computer++;
+}
+if (playerselection = selection[1] && computerselection = selection[2]) {
+    computer++;
+}
+if (playerselection = selection[2] && computerselection = selection[1]) {
+    player++;
+}
+if (playerselection = selection[1] && computerselection = selection[0]) {
+    player++;
+}
+if (playerselection = selection[0] && computerselection = selection[2]) {
+    player++;
+}
+if (playerselection = selection[2] && computerselection = selection[0]) {
+    computer++
 }
 return roundResults;
 }
-/*I need to somehow connect choice to playerselection. I need to make it so that the if statement can recognize if playerselection and computerselection are equal. I need to add logic about how one choice is greater than or less than another choice. I need to finish the if/else logic for when computerselection wins, and when playerselection wins.*/
 
 //use previous function inside this one to play a 5 round game
 //keeps score and reports winner or loser at the end
