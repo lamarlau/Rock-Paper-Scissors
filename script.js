@@ -39,7 +39,7 @@ if (playerselection = selection[0] && computerselection = selection[2]) {
     player++;
 }
 if (playerselection = selection[2] && computerselection = selection[0]) {
-    computer++
+    computer++;
 }
 return roundResults;
 }
