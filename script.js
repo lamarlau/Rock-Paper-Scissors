@@ -12,43 +12,45 @@ function computerPlay() {
 //returns string at end like "Paper beats rock"
 //player selection must be case insensitive
 //return results of function call not console.log them
-function playRound(playerselection, computerselection) {
-choice = prompt("Rock, paper or scissors?");
-let choice = new RegExp(/rock/i, /paper/i, /scissors/i);
-playerselection = choice;
-computerselection = computerPlay;
-if (computerselection = playerselection) {
-    roundResults = tie;
-    tie = console.log("Tie, you both chose ${choice}");
-    return roundResults;
-}
-
-if (playerselection = selection[0] && computerselection = selection[1]) {
-    computer++;
-}
-if (playerselection = selection[1] && computerselection = selection[2]) {
-    computer++;
-}
-if (playerselection = selection[2] && computerselection = selection[1]) {
-    player++;
-}
-if (playerselection = selection[1] && computerselection = selection[0]) {
-    player++;
-}
-if (playerselection = selection[0] && computerselection = selection[2]) {
-    player++;
-}
-if (playerselection = selection[2] && computerselection = selection[0]) {
-    computer++;
-}
-return roundResults;
-}
 
 //use previous function inside this one to play a 5 round game
 //keeps score and reports winner or loser at the end
 function game() {
-
+    while (i <= 5) {
+    function playRound(playerselection, computerselection) {
+        choice = prompt("Rock, paper or scissors?");
+        let choice = new RegExp(/rock/i, /paper/i, /scissors/i);
+        playerselection = choice;
+        computerselection = computerPlay;
+        if (computerselection = playerselection) {
+            roundResults = tie;
+            tie = console.log("Tie, you both chose ${choice}");
+            return roundResults;
+        }
+        
+        if (playerselection == selection[0] && computerselection == selection[1]) {
+            computer++;
+        }
+        else if (playerselection == selection[1] && computerselection == selection[2]) {
+            computer++;
+        }
+        else if (playerselection == selection[2] && computerselection == selection[1]) {
+            player++;
+        }
+        else if (playerselection == selection[1] && computerselection == selection[0]) {
+            player++;
+        }
+        else if (playerselection == selection[0] && computerselection == selection[2]) {
+            player++;
+        }
+        else if (playerselection == selection[2] && computerselection == selection[0]) {
+            computer++;
+        }
+        else {
+            return roundResults;
+        }
+    }
 }
-
+}
 //console.log()display the results of the round and winner to the user
 //prompt()to get input from user
