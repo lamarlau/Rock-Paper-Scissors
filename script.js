@@ -22,24 +22,30 @@ function playRound(playerselection, computerselection) {
         tie = console.log("Tie, you both chose ${choice}");
         return roundResults;
     }
-    
+    ["Rock", "Paper", "Scissors"];
     if (playerselection == selection[0] && computerselection == selection[1]) {
         computer++;
+        return "Paper beats rock";
     }
     else if (playerselection == selection[1] && computerselection == selection[2]) {
         computer++;
+        return "Scissors beats paper";
     }
     else if (playerselection == selection[2] && computerselection == selection[1]) {
         player++;
+        return "Scissors beats paper";
     }
     else if (playerselection == selection[1] && computerselection == selection[0]) {
         player++;
+        return "Paper beats rock";
     }
     else if (playerselection == selection[0] && computerselection == selection[2]) {
         player++;
+        return "Rock beats scissors";
     }
     else if (playerselection == selection[2] && computerselection == selection[0]) {
         computer++;
+        return "Rock beats scissors";
     }
     else {
         return roundResults;
