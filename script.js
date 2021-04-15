@@ -18,12 +18,9 @@ function playRound(playerselection, computerselection) {
     playerselection = choice;
     computerselection = computerPlay;
     if (computerselection = playerselection) {
-        roundResults = tie;
-        tie = console.log("Tie, you both chose ${choice}");
-        return roundResults;
+        return "Tie, you both chose ${choice}";
     }
-    ["Rock", "Paper", "Scissors"];
-    if (playerselection == selection[0] && computerselection == selection[1]) {
+    else if (playerselection == selection[0] && computerselection == selection[1]) {
         computer++;
         return "Paper beats rock";
     }
@@ -46,9 +43,6 @@ function playRound(playerselection, computerselection) {
     else if (playerselection == selection[2] && computerselection == selection[0]) {
         computer++;
         return "Rock beats scissors";
-    }
-    else {
-        return roundResults;
     }
 }
 //use previous function inside this one to play a 5 round game
