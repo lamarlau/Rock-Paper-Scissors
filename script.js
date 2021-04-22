@@ -1,6 +1,5 @@
 //initializing variables, creating an array for selection, a random index constant, and a results string to call after each round of the game
 var selection = ["rock", "paper", "scissors"];
-const randIndex = Math.floor(Math.random() * selection.length);
 var computerResult;
 var playersChoice;
 var computerScore = 0;
@@ -9,16 +8,24 @@ var results = "Computer score: " + computerScore + "; Player score: " + playerSc
 var round = 0;
 
 //function for computer to randomly choose from variable selection
-function computerPlay() {
-    computerResult = selection[randIndex];
-    console.log(computerResult);
+function computerPlay(computerResult) {
+    let computerNum = Math.floor(Math.random() * 3);
+    if (computerNum == 0) {
+        computerResult = "rock"
+    } else if (computerNum == 1) {
+        computerResult = "paper"
+    } else if (computerNum == 2) {
+        computerResult = "scissors"
+    }
+    console.log(computerNum);
 }
-
 /* play round takes case insensitive input and compares your selection with the computers selection. Adds score and returns string */
 function playRound(playerselection, computerselection) {
+    computerPlay();
     playerselection = prompt("Rock, paper or scissors?");
     playerselection.toLowerCase();
-    computerPlay();
+    playersChoice == playerselection;
+    computerResult == computerselection;
     if (playerselection = computerselection) {
         return "Tie, you both chose ${playerselection}";
     }
@@ -27,27 +34,27 @@ function playRound(playerselection, computerselection) {
         console.log(results);
         return "Paper beats rock";
     }
-    else if (playersChoice === 'paper' && computerselection === "scissors") {
+    else if (playerselection === 'paper' && computerselection === "scissors") {
         computerScore++;
         console.log(results);
         return "Scissors beats paper";
     }
-    else if (playersChoice === "scissors" && computerselection === 'paper') {
+    else if (playerselection === "scissors" && computerselection === 'paper') {
         playerScore++;
         console.log(results);
         return "Scissors beats paper";
     }
-    else if (playersChoice === 'paper' && computerselection === 'rock') {
+    else if (playerselection === 'paper' && computerselection === 'rock') {
         playerScore++;
         console.log(results);
         return "Paper beats rock";
     }
-    else if (playersChoice === 'rock' && computerselection === "scissors") {
+    else if (playerselection === 'rock' && computerselection === "scissors") {
         playerScore++;
         console.log(results);
         return "Rock beats scissors";
     }
-    else if (playersChoice === "scissors" && computerselection === 'rock') {
+    else if (playerselection === "scissors" && computerselection === 'rock') {
         computerScore++;
         console.log(results);
         return "Rock beats scissors";
