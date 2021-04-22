@@ -4,23 +4,18 @@ var playerScore = 0;
 var selection = ["rock", "paper", "scissors"];
 const randIndex = Math.floor(Math.random() * selection.length);
 var results = "Computer score: " + computerScore + "; Player score: " + playerScore;
-var computerResult;
-var choice;
 var round = 0;
 
 //function for computer to randomly choose from variable selection
 function computerPlay() {
-    computerResult = selection[randIndex];
+    var computerResult = selection[randIndex];
     console.log(computerResult);
 }
 
-function playerPlay() {
-    choice = prompt("Rock, paper or scissors?");
-    choice.toLowerCase;
-}
 /* play round takes case insensitive input and compares your selection with the computers selection. Adds score and returns string */
 function playRound(playerselection, computerselection) {
-    playerPlay();
+    choice = prompt("Rock, paper or scissors?");
+    choice.toLowerCase;
     computerPlay();
     choice = playerselection;
     computerResult = computerselection;
@@ -29,38 +24,46 @@ function playRound(playerselection, computerselection) {
     }
     else if (playerselection == selection[0] && computerselection == selection[1]) {
         computerScore++;
+        console.log(results);
         return "Paper beats rock";
     }
     else if (playerselection == selection[1] && computerselection == selection[2]) {
         computerScore++;
+        console.log(results);
         return "Scissors beats paper";
     }
     else if (playerselection == selection[2] && computerselection == selection[1]) {
         playerScore++;
+        console.log(results);
         return "Scissors beats paper";
     }
     else if (playerselection == selection[1] && computerselection == selection[0]) {
         playerScore++;
+        console.log(results);
         return "Paper beats rock";
     }
     else if (playerselection == selection[0] && computerselection == selection[2]) {
         playerScore++;
+        console.log(results);
         return "Rock beats scissors";
     }
     else if (playerselection == selection[2] && computerselection == selection[0]) {
         computerScore++;
+        console.log(results);
         return "Rock beats scissors";
+    }
+    else {
+        console.log(results);
     }
 }
 
 //use previous function inside this one to play a 5 round game
 //keeps score and reports winner or loser at the end
 function game() {
+    while (round < 5) {
+        round++;
         playRound();
-        playRound();
-        playRound();
-        playRound();
-        playRound();
+    }
     if (computerScore > playerScore) {
         console.log("Computer wins");
         return results;
