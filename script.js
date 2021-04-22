@@ -17,13 +17,13 @@ function computerPlay(computerResult) {
     } else if (computerNum == 2) {
         computerResult = "scissors"
     }
-    console.log(computerNum);
+    console.log(computerResult);
 }
 /* play round takes case insensitive input and compares your selection with the computers selection. Adds score and returns string */
 function playRound(playerselection, computerselection) {
-    computerPlay();
     playerselection = prompt("Rock, paper or scissors?");
     playerselection.toLowerCase();
+    computerPlay();
     playersChoice == playerselection;
     computerResult == computerselection;
     if (playerselection = computerselection) {
