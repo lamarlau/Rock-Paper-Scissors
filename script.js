@@ -69,6 +69,9 @@ function game() {
     else if (computerScore < playerScore) {
         console.log("You won!");
     }
+    else {
+        console.log("You tied with the computer");
+    }
 }
 
 
