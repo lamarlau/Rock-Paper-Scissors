@@ -4,7 +4,6 @@ var computerResult;
 var playerselection;
 var computerScore = 0;
 var playerScore = 0;
-var results = "Computer score: " + computerScore + ", Player score: " + playerScore;
 var round = 0;
 
 //function for computer to randomly choose from variable selection
