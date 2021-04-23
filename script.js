@@ -25,6 +25,35 @@ function playRound(playerselection, computerselection) {
     playerselection = prompt("Rock, paper or scissors?").toLowerCase();
     console.log("You chose: " + playerselection);
     computerselection = computerPlay();
+    if (playerselection == computerselection) {
+        console.log("Tie");
+    }
+    else if (playerselection === 'rock' && computerselection === 'paper') {
+        computerScore++;
+        console.log("Paper beats rock");
+    }
+    else if (playerselection === 'paper' && computerselection === "scissors") {
+        computerScore++;
+        console.log("Scissors beats paper");
+    }
+    else if (playerselection === "scissors" && computerselection === 'paper') {
+        playerScore++;
+        console.log("Scissors beats paper");
+    }
+    else if (playerselection === 'paper' && computerselection === 'rock') {
+        playerScore++;
+        console.log("Paper beats rock");
+    }
+    else if (playerselection === 'rock' && computerselection === "scissors") {
+        playerScore++;
+        console.log("Rock beats scissors");
+    }
+    else if (playerselection === "scissors" && computerselection === 'rock') {
+        computerScore++;
+        console.log("Rock beats scissors");
+    }
+        return results;
+
 }
 
 //use previous function inside this one to play a 5 round game
@@ -33,7 +62,6 @@ function game() {
     while (round < 5) {
         round++;
         playRound();
-        console.log(results);
     }
     if (computerScore > playerScore) {
         console.log("Computer wins");
@@ -42,9 +70,6 @@ function game() {
     else if (computerScore < playerScore) {
         console.log("You won!");
         return results;
-    }
-    else {
-        console.log("Noone won");
     }
 };
 
