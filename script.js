@@ -11,15 +11,16 @@ var round = 0;
 function computerPlay(computerResult) {
     let computerNum = Math.floor(Math.random() * 3);
     if (computerNum == 0) {
-        computerResult = "rock"
+        computerResult = "rock";
     } else if (computerNum == 1) {
-        computerResult = "paper"
+        computerResult = "paper";
     } else if (computerNum == 2) {
-        computerResult = "scissors"
+        computerResult = "scissors";
     }
     console.log("Computer chose: " + computerResult);
     return computerResult;
 }
+
 /* play round takes case insensitive input and compares your selection with the computers selection. Adds score and returns string */
 function playRound(playerselection, computerselection) {
     playerselection = prompt("Rock, paper or scissors?").toLowerCase();
@@ -51,9 +52,7 @@ function playRound(playerselection, computerselection) {
     else if (playerselection === "scissors" && computerselection === 'rock') {
         computerScore++;
         console.log("Rock beats scissors");
-    }
-        return results;
-
+}
 }
 
 //use previous function inside this one to play a 5 round game
@@ -62,16 +61,16 @@ function game() {
     while (round < 5) {
         round++;
         playRound();
+        console.log("Computer score: " + computerScore + ", Player score: " + playerScore);
     }
     if (computerScore > playerScore) {
         console.log("Computer wins");
-        return results;
     }
     else if (computerScore < playerScore) {
         console.log("You won!");
-        return results;
     }
-};
+}
+
 
 //calls game function to initiate the code
 game();
