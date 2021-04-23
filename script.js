@@ -18,13 +18,13 @@ function computerPlay(computerResult) {
         computerResult = "scissors"
     }
     console.log("Computer chose: " + computerResult);
+    return computerResult;
 }
 /* play round takes case insensitive input and compares your selection with the computers selection. Adds score and returns string */
 function playRound(playerselection, computerselection) {
     playerselection = prompt("Rock, paper or scissors?").toLowerCase();
     console.log("You chose: " + playerselection);
-    computerPlay();
-    
+    computerselection = computerPlay();
 }
 
 //use previous function inside this one to play a 5 round game
