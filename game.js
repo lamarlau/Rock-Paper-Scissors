@@ -1,4 +1,3 @@
-//initializing variables, creating an array for selection, a random index constant, and a results string to call after each round of the game
 var selection = ["rock", "paper", "scissors"];
 var computerResult;
 var playerselection;
@@ -20,9 +19,9 @@ function computerPlay(computerResult) {
     return computerResult;
 }
 
-/* play round takes case insensitive input and compares your selection with the computers selection. Adds score and returns string */
+/* play round to have event listeners for buttons then will take the input and add score accordingly */
 function playRound(playerselection, computerselection) {
-    playerselection = prompt("Rock, paper or scissors?").toLowerCase();
+    
     console.log("You chose: " + playerselection);
     computerselection = computerPlay();
     if (playerselection == computerselection) {
@@ -54,11 +53,9 @@ function playRound(playerselection, computerselection) {
 }
 }
 
-//use previous function inside this one to play a 5 round game
-//keeps score and reports winner or loser at the end
+// to playround until one gets 5 points
 function game() {
-    while (round < 5) {
-        round++;
+
         playRound();
         console.log("Computer score: " + computerScore + ", Player score: " + playerScore);
     }
@@ -68,10 +65,6 @@ function game() {
     else if (computerScore < playerScore) {
         console.log("You won!");
     }
-    else {
-        console.log("You tied with the computer");
-    }
-}
 
 
 //calls game function to initiate the code
