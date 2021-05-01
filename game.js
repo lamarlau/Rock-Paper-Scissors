@@ -4,6 +4,9 @@ var playerselection;
 var computerScore = 0;
 var playerScore = 0;
 var round = 0;
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
 //function for computer to randomly choose from variable selection
 function computerPlay(computerResult) {
@@ -66,6 +69,16 @@ function game() {
         console.log("You won!");
     }
 
+//dom javascript for button event listeners
+rock.addEventListener('click', () => {
+    alert("Hello World");
+  });
+  paper.addEventListener('click', () => {
+    alert("Hello World");
+  });
+  scissors.addEventListener('click', () => {
+    alert("Hello World");
+  });
 
 //calls game function to initiate the code
 game();
