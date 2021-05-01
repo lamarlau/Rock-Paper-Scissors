@@ -7,6 +7,7 @@ var round = 0;
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
+const results = document.querySelector('#results');
 
 //function for computer to randomly choose from variable selection
 function computerPlay(computerResult) {
@@ -26,9 +27,6 @@ function computerPlay(computerResult) {
 function playRound(playerselection, computerselection) {
 if (playerselection) {
     console.log(playerselection);
-}
-if (computerselection) {
-    console.log(computerselection);
 }
 if (playerselection == computerselection) {
     console.log("Tie");
@@ -63,10 +61,10 @@ game();
 //playround until one gets 5 points
 function game() {
     if (computerScore >= 5) {
-        console.log("Computer wins");
+        alert("Computer wins");
     }
     else if (playerScore >= 5) {
-        console.log("You won!");
+        alert("You won!");
     }
 }
 
