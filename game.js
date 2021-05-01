@@ -4,9 +4,9 @@ var playerselection;
 var computerScore = 0;
 var playerScore = 0;
 var round = 0;
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
 
 //function for computer to randomly choose from variable selection
 function computerPlay(computerResult) {
@@ -24,61 +24,62 @@ function computerPlay(computerResult) {
 
 /* play round to have event listeners for buttons then will take the input and add score accordingly */
 function playRound(playerselection, computerselection) {
-    
-    console.log("You chose: " + playerselection);
-    computerselection = computerPlay();
-    if (playerselection == computerselection) {
-        console.log("Tie");
-    }
-    else if (playerselection === 'rock' && computerselection === 'paper') {
-        computerScore++;
-        console.log("Paper beats rock");
-    }
-    else if (playerselection === 'paper' && computerselection === "scissors") {
-        computerScore++;
-        console.log("Scissors beats paper");
-    }
-    else if (playerselection === "scissors" && computerselection === 'paper') {
-        playerScore++;
-        console.log("Scissors beats paper");
-    }
-    else if (playerselection === 'paper' && computerselection === 'rock') {
-        playerScore++;
-        console.log("Paper beats rock");
-    }
-    else if (playerselection === 'rock' && computerselection === "scissors") {
-        playerScore++;
-        console.log("Rock beats scissors");
-    }
-    else if (playerselection === "scissors" && computerselection === 'rock') {
-        computerScore++;
-        console.log("Rock beats scissors");
+if (playerselection) {
+    console.log(playerselection);
 }
+if (computerselection) {
+    console.log(computerselection);
+}
+if (playerselection == computerselection) {
+    console.log("Tie");
+}
+else if (playerselection === 'rock' && computerselection === 'paper') {
+    computerScore++;
+    console.log("Paper beats rock");
+}
+else if (playerselection === 'paper' && computerselection === "scissors") {
+    computerScore++;
+    console.log("Scissors beats paper");
+}
+else if (playerselection === "scissors" && computerselection === 'paper') {
+    playerScore++;
+    console.log("Scissors beats paper");
+}
+else if (playerselection === 'paper' && computerselection === 'rock') {
+    playerScore++;
+    console.log("Paper beats rock");
+}
+else if (playerselection === 'rock' && computerselection === "scissors") {
+    playerScore++;
+    console.log("Rock beats scissors");
+}
+else if (playerselection === "scissors" && computerselection === 'rock') {
+    computerScore++;
+    console.log("Rock beats scissors");
+}
+game();
 }
 
-// to playround until one gets 5 points
+//playround until one gets 5 points
 function game() {
-
-        playRound();
-        console.log("Computer score: " + computerScore + ", Player score: " + playerScore);
-    }
-    if (computerScore > playerScore) {
+    if (computerScore >= 5) {
         console.log("Computer wins");
     }
-    else if (computerScore < playerScore) {
+    else if (playerScore >= 5) {
         console.log("You won!");
     }
+}
 
 //dom javascript for button event listeners
-rock.addEventListener('click', () => {
+rockButton.addEventListener('click', () => {
     alert("Hello World");
+    playRound(selection[0], computerPlay());
   });
-  paper.addEventListener('click', () => {
+  paperButton.addEventListener('click', () => {
     alert("Hello World");
+    playRound(selection[1], computerPlay());
   });
-  scissors.addEventListener('click', () => {
+  scissorsButton.addEventListener('click', () => {
     alert("Hello World");
+    playRound(selection[2], computerPlay());
   });
-
-//calls game function to initiate the code
-game();
