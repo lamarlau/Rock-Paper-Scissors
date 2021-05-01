@@ -4,10 +4,18 @@ var playerselection;
 var computerScore = 0;
 var playerScore = 0;
 var round = 0;
+var gameResults;
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
+
+const player = document.querySelector('#player-score');
+player.textContent = `Player score: ${playerScore}`;
+const computer = document.querySelector('#computer-score');
+computer.textContent = `Computer score: ${computerScore}`;
 const results = document.querySelector('#results');
+results.textContent = `${gameResults}`;
+
 
 //function for computer to randomly choose from variable selection
 function computerPlay(computerResult) {
@@ -27,6 +35,7 @@ function computerPlay(computerResult) {
 function playRound(playerselection, computerselection) {
 if (playerselection) {
     console.log(playerselection);
+
 }
 if (playerselection == computerselection) {
     console.log("Tie");
@@ -61,10 +70,10 @@ game();
 //playround until one gets 5 points
 function game() {
     if (computerScore >= 5) {
-        alert("Computer wins");
+        gameResults = "The computer won"
     }
     else if (playerScore >= 5) {
-        alert("You won!");
+        gameResults = "You won!";
     }
 }
 
