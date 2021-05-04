@@ -13,7 +13,7 @@
 button {
     margin: 12px;
 }
-#results {
+#results, #player-score, #computer-score {
     display: flex;
     align-items: center;
     justify-content: center;

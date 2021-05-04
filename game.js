@@ -8,14 +8,9 @@ var gameResults;
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
-
 const player = document.querySelector('#player-score');
-player.textContent = `Player score: ${playerScore}`;
 const computer = document.querySelector('#computer-score');
-computer.textContent = `Computer score: ${computerScore}`;
 const results = document.querySelector('#results');
-results.textContent = `${gameResults}`;
-
 
 //function for computer to randomly choose from variable selection
 function computerPlay(computerResult) {
@@ -34,8 +29,7 @@ function computerPlay(computerResult) {
 /* play round to have event listeners for buttons then will take the input and add score accordingly */
 function playRound(playerselection, computerselection) {
 if (playerselection) {
-    console.log(playerselection);
-
+    console.log("You chose: " + playerselection);
 }
 if (playerselection == computerselection) {
     console.log("Tie");
@@ -43,38 +37,58 @@ if (playerselection == computerselection) {
 else if (playerselection === 'rock' && computerselection === 'paper') {
     computerScore++;
     console.log("Paper beats rock");
+    console.log(computerScore);
+    return computerScore;
 }
 else if (playerselection === 'paper' && computerselection === "scissors") {
     computerScore++;
     console.log("Scissors beats paper");
+    console.log(computerScore);
+    return computerScore;
 }
 else if (playerselection === "scissors" && computerselection === 'paper') {
     playerScore++;
     console.log("Scissors beats paper");
+    console.log(playerScore);
+    return playerScore;
 }
 else if (playerselection === 'paper' && computerselection === 'rock') {
     playerScore++;
     console.log("Paper beats rock");
+    console.log(playerScore);
+    return playerScore;
 }
 else if (playerselection === 'rock' && computerselection === "scissors") {
     playerScore++;
     console.log("Rock beats scissors");
+    console.log(playerScore);
+    return playerScore;
 }
 else if (playerselection === "scissors" && computerselection === 'rock') {
     computerScore++;
     console.log("Rock beats scissors");
+    console.log(computerScore);
+    return computerScore;
 }
-game();
 }
 
 //playround until one gets 5 points
 function game() {
     if (computerScore >= 5) {
-        gameResults = "The computer won"
+        gameResults = "The computer won";
+        console.log(gameResults);
+        return gameResults;
     }
     else if (playerScore >= 5) {
         gameResults = "You won!";
+        console.log(gameResults);
+        return gameResults;
     }
+}
+if (computerScore < 5 && playerScore < 5) {
+    gameResults = "The first to five wins";
+    console.log(gameResults);
+    game();
 }
 
 //dom javascript for button event listeners
@@ -90,3 +104,7 @@ rockButton.addEventListener('click', () => {
     alert("Hello World");
     playRound(selection[2], computerPlay());
   });
+
+player.innerHTML = `Player score: ${playerScore}`
+computer.innerHTML = `Computer score: ${computerScore}`
+results.innerHTML = `${gameResults}`;
